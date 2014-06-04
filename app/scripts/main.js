@@ -99,12 +99,10 @@ function Task(strDescription) {
 ////////////////////////////////////// LOAD AND SUBMIT TASKS
 ////////////////////////////////////////////////////////////
 function loadTasks() {
-	$('.task-list').html('');
-
 	tasksCollection.fetch().done(function() {
 		tasksCollection.each(function(task) {
 			new TaskView({model: task});
-		})
+		});
 	});
 }
 
