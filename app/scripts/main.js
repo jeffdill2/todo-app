@@ -77,6 +77,8 @@ TaskCollection = Backbone.Collection.extend({
 	url: strTasksURL,
 });
 
+var tasksCollection = new TaskCollection();
+
 ////////////////////////////////////////////////////////////
 /////////////////////////////////////////////// CONSTRUCTORS
 ////////////////////////////////////////////////////////////
@@ -99,28 +101,21 @@ function Task(strDescription) {
 function loadTasks() {
 	$('.task-list').html('');
 
-	var tasks = new TaskCollection();
-
-	tasks.fetch().done(function() {
-		tasks.each(function(task) {
+	tasksCollection.fetch().done(function() {
+		tasksCollection.each(function(task) {
 			new TaskView({model: task});
 		})
 	});
 }
 
-function newTask(objTask) {
-	return $.post(strTasksURL, objTask);
-}
-
 $('.submit-button').click(function() {
 	var objTask = new Task($('.form-description').val());
+	var objTaskModel = tasksCollection.add(objTask);
 
-	newTask(objTask).done(function(){});
+	objTaskModel.save();
+	new TaskView({model: objTaskModel});
 
 	$('.form-description').val('');
-
-	loadTasks();
-
 	$('.form-description').focus();
 });
 
