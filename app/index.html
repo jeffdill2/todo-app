@@ -38,15 +38,19 @@
         </div>
 
         <script type="text/template" class="task-list-template">
-            <span class="task-description"><%= description %></span>
-            <span class="task-modify-button task-button">Modify</span>
-            <span class="task-delete-button task-button">Done!</span>
+            <div class="task-container">
+                <div class="task-description"><%= description %></div>
+                <div class="task-modify-button task-button">Modify</div>
+                <div class="task-delete-button task-button">Done!</div>
+            </div>
         </script>
  
         <script type="text/template" class="task-list-edit-template">
-            <span class="task-description"><input type="text" value="<%= description %>"></span>
-            <span class="task-save-button task-button">Save</span>
-            <span class="task-delete-button task-button">Delete</span>
+            <div class="task-container">
+                <div class="task-description"><input type="text" value="<%= description %>"></div>
+                <div class="task-save-button task-button">Save</div>
+                <div class="task-delete-button task-button">Delete</div>
+            </div>
         </script>
 
         <!--////////////////////////////////////////////////////////

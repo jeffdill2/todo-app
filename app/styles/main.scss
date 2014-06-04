@@ -73,6 +73,13 @@ body {
     right: 0px;
     bottom: 0px;
     position: absolute;
+    overflow-x: auto;
+    padding-top: 15px;
+}
+
+.task-container {
+    margin-bottom: 15px;
+    margin-left: 5%;
 }
 
 ////////////////////////////////////////////////////////////
@@ -128,7 +135,17 @@ body {
 ////////////////////////////////////////////////// TASK LIST
 ////////////////////////////////////////////////////////////
 .task-description {
+    font-family: Helvetica, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: normal;
+    padding: 5px;
+    width: 30%;
+    display: inline-block;
 
+    input {
+        padding: 5px;
+    }
 }
 
 .task-button {
@@ -143,7 +160,7 @@ body {
     text-align: center;
     color: $colorMidnightGray;
     text-shadow: -1px -1px 1px $colorWhite;
-    margin-top: 0px;
+    margin-top: -3px;
     margin-right: 4%;
     float: right;
     width: 60px;
